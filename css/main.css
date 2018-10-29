@@ -1,0 +1,185 @@
+.header .wrapper {
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  width: 1116px;
+  margin: 0 auto;
+}
+.header .wrapper h1 {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
+h1,
+.large-header {
+  /* font-size: 4rem; */
+  line-height: 1.2;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.9);
+}
+.tickets-form {
+  display: inline-flex;
+  position: relative;
+  -webkit-box-align: start;
+
+  align-items: flex-start;
+  -webkit-box-pack: end;
+  margin: auto;
+  justify-content: flex-end;
+  text-align: right;
+}
+.tickets-form label {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px !important;
+  overflow: hidden;
+  padding: 0 !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  width: 1px !important;
+}
+.tickets-form p {
+  margin: 10px 8px 10px 0;
+  padding: 10px;
+}
+.tickets-form input {
+  /* font-size: 1.2rem; */
+  line-height: 1.33333;
+  font-weight: 600;
+  display: inline-block;
+  width: 260px;
+  height: 32px;
+  margin: 10px 8px 10px 0;
+  padding: 0 10px;
+  background: #f3f6f8;
+  border: 1px solid #b3b6b9;
+  border-radius: 2px;
+}
+.tickets-form input[type="submit"] {
+  /* font-size: 1.6rem; */
+  line-height: 1.5;
+  font-weight: 600;
+  color: #fff;
+  display: inline-block;
+  width: auto;
+  height: 32px;
+  margin: 10px 0 0;
+  padding: 0 20px;
+  background-color: #0073b1;
+  border: 1px solid #fff;
+  border-radius: 2px;
+}
+
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s;
+}
+
+@-webkit-keyframes animatebottom {
+  from {
+    bottom: -100px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes animatebottom {
+  from {
+    bottom: -100px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+#myDiv {
+  display: none;
+  text-align: center;
+}
+
+#table td,
+#table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+#table tr {
+  cursor: pointer;
+}
+
+#table tr:hover {
+  background-color: #ddd;
+}
+
+#table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  cursor: default;
+  /* background-color: #1aa3ff;
+  color: white; */
+}
+
+#more_btn {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  position: relative;
+  right: 0;
+  bottom: 0;
+}
