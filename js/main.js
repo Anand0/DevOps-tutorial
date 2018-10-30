@@ -22,6 +22,9 @@ $(document).ready(function() {
           $("#loader").hide();
           // $("#more_btn").show();
           $("#order_table").html(data);
+          //   $("td:nth-child(1)").hide();
+          var column = $("td:nth-child(1)");
+          $(column).hide();
         }
       });
     } else if (str1.trim()) {
@@ -45,6 +48,20 @@ $(document).ready(function() {
 
   $(document).on("click", "#table tr", function() {
     // alert(2);
+
+    var $row = $(this).closest("tr"); // Find the row
+    var $ticketId = $row.find(".nr").text(); // Find the text
+
+    $.ajax({
+      url: "data.php?ticket_id=" + $ticketId,
+      method: "POST",
+
+      success: function(data) {
+        // alert(data);
+        $("textarea").val(data);
+        $("#viewModal").show();
+      }
+    });
   });
 
   $("#more_btn").click(function() {
@@ -54,5 +71,8 @@ $(document).ready(function() {
 
     console.log("inital Count =", initalVal);
     console.log("final log = ", finalVal);
+  });
+  $(document).on("click", "#close-mod", function() {
+    $("#viewModal").hide();
   });
 });

@@ -18,7 +18,7 @@
 <body>
     <div class="header">
         <div class="wrapper">
-    <!-- <h1>Tickets</h1> -->
+    <h1>eGrabber Helpdesk</h1>
     <!-- <form class = "tickets-form" action="" method="POST"> -->
         <div class = "tickets-form">
             <label for="serarchlabel">Search</label>
@@ -35,11 +35,60 @@
     <!-- <button>More</button> -->
     
     </div>
+    <!-- The Modal -->
+<div id="viewModal" class="modal">
+<div class="modal-wrapper modal-sm-wid" id="box">
+<!--Header Starts-->
+<div class="modal-header">
+<div class="header-lft">
+Message
+</div>
+
+<div class="header-rgt close">
+X
+</div>
+</div>
+<!--Header Ends-->
+<!--Body Starts-->
+<div class="modal-body">
+<!-- Rows Starts-->
+
+<div class="rows" align="right">
+
+<textarea rows="40" cols="77">
+
+</textarea>
+
+</div>
+<!-- Rows Ends-->
+</div>
+
+<div class="modal-footer">
+
+<button type="button" id="close-mod" name="run">Close</button>
+</div>
+
+<!--Body Starts-->
+</div>
+<!--Modal Wrapper Ends-->
+</div>
     <!-- <input type="button" id="more_btn" value="More"> -->
     
 </body>
 </html>
-<script>
+<script type="text/javascript">
+
+var modal = document.getElementById('viewModal');
+var span = document.getElementsByClassName("close")[0];
+span.onclick = function() {
+    document.getElementById('viewModal').style.display = "none";
+}
+window.onclick = function(event) {
+    if (event.target == document.getElementById('viewModal')) {
+        document.getElementById('viewModal').style.display = "none";    
+    }
+}
+
      document.getElementById("loader").style.display = "none";
     //  document.getElementById("more_btn").style.display = "none";
     </script>
