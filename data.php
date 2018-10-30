@@ -21,13 +21,12 @@ if(!isset($_REQUEST['user']) && !isset($_REQUEST['ticket_id']))
       $userIp = (isset($_REQUEST['user'])) ? (trim($_REQUEST['user'])) : '';
       $query = "";
       if (strpos($userIp, '@') !== false) {
-        // $query = "SELECT DISTINCT ticket_id FROM thread WHERE thread_replyto = '$userIp'";
         $query = "SELECT DISTINCT ticket_id FROM thread WHERE thread_replyto LIKE '%$userIp%'";
-        // $query = "SELECT DISTINCT ticket_id FROM user INNER JOIN ticket_audit_log ON ticket_audit_log.user_id = user.user_id WHERE user_email = '$userIp'";
+    
     }else if (strpos($userIp, '-') !== false){
-      // $query = "SELECT DISTINCT ticket_id FROM user INNER JOIN ticket_audit_log ON ticket_audit_log.user_id = user.user_id WHERE user_name = '$userIp'";
+    
       $query = "SELECT DISTINCT ticket_id FROM thread WHERE thread_subject LIKE '%$userIp%'";
-      // print ($query);
+   
     }else{
       $query = "SELECT DISTINCT ticket_id FROM thread WHERE thread_replyto LIKE '%$userIp%'";
     }
@@ -38,14 +37,11 @@ if(!isset($_REQUEST['user']) && !isset($_REQUEST['ticket_id']))
      
       $data = array();
       
-      // $output .= '<table id="table"><thead><tr><th width="20%">ticket_id</th><th width="20%">thread_id</th></thead><th width="30%">thread_content_part</th></tr>';  
       if(mysqli_num_rows($results) > 0)  
       { 
       while( $row=mysqli_fetch_array($results) )
   	{
-		// preparing an array
-    
-
+   
     $nestedData[] = $row["ticket_id"];
     $data[] = $row["ticket_id"];
    
@@ -90,8 +86,8 @@ if ($rows["thread_id"] == $checkThreadId){
   $checkThreadId = $rows["thread_id"];
   
 }
-  
-      }
+
+}
     }
   } 
   }
@@ -105,9 +101,6 @@ if ($rows["thread_id"] == $checkThreadId){
 
       $contentquery = "SELECT thread_content_part FROM thread_content_part WHERE thread_id = $ticket_id";
 
-// SELECT DISTINCT thread_content_part, thread_subject, ticket_id
-    // $contentquery = "SELECT * FROM thread INNER JOIN thread_content_part ON thread_content_part.thread_id = thread.thread_id WHERE ticket_id = $ticket_id";
-    // $contentquery = "SELECT DISTINCT thread_content_part, thread_subject, ticket_id FROM thread INNER JOIN thread_content_part ON thread_content_part.thread_id = thread.thread_id WHERE ticket_id = $ticket_id";
     $contentresults = mysqli_query($conn, $contentquery);
     $checkThreadId = 0;
     $content = "";

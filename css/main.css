@@ -2,7 +2,7 @@
   display: flex;
   -webkit-box-pack: justify;
   justify-content: space-between;
-  width: 1116px;
+  width: 1024px;
   margin: 0 auto;
 }
 .header .wrapper h1 {
@@ -18,13 +18,10 @@ h1,
   color: rgba(0, 0, 0, 0.9);
 }
 .tickets-form {
-  display: inline-flex;
+  display: flex;
   position: relative;
-  -webkit-box-align: start;
-
-  align-items: flex-start;
-  -webkit-box-pack: end;
-  margin: auto;
+  -webkit-box-align: center;
+  align-items: center;
   justify-content: flex-end;
   text-align: right;
 }
@@ -63,26 +60,36 @@ h1,
   display: inline-block;
   width: auto;
   height: 32px;
-  margin: 10px 0 0;
+  margin: 0;
   padding: 0 20px;
   background-color: #0073b1;
   border: 1px solid #fff;
   border-radius: 2px;
 }
-
 #loader {
-  position: absolute;
-  left: 50%;
-  top: 50%;
+  margin: 0 auto;
+  padding: 0;
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
-  width: 150px;
-  height: 150px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loader-spin {
+  margin: 0;
+  padding: 0;
+  z-index: 2;
+  width: 120px;
+  height: 120px;
   margin: -75px 0 0 -75px;
   border: 16px solid #f3f3f3;
   border-radius: 50%;
   border-top: 16px solid #3498db;
-  width: 120px;
-  height: 120px;
   -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
 }
@@ -102,37 +109,6 @@ h1,
   }
   100% {
     transform: rotate(360deg);
-  }
-}
-
-/* Add animation to "page content" */
-.animate-bottom {
-  position: relative;
-  -webkit-animation-name: animatebottom;
-  -webkit-animation-duration: 1s;
-  animation-name: animatebottom;
-  animation-duration: 1s;
-}
-
-@-webkit-keyframes animatebottom {
-  from {
-    bottom: -100px;
-    opacity: 0;
-  }
-  to {
-    bottom: 0px;
-    opacity: 1;
-  }
-}
-
-@keyframes animatebottom {
-  from {
-    bottom: -100px;
-    opacity: 0;
-  }
-  to {
-    bottom: 0;
-    opacity: 1;
   }
 }
 
